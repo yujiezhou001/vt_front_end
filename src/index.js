@@ -1,32 +1,47 @@
+const data = [
+    {
+        id: 1,
+        product_name: 'Blue Flower',
+        price: '$80.00',
+        rating: 4,
+        image_source:'./assets/blue-flower.png'
+    },
+    {
+        id: 2,
+        product_name: 'Orange Flower',
+        price: '$17.60',
+        rating: 3,
+        image_source:'./assets/orange-flower.png'
+    },
+    {
+        id: 3,
+        product_name: 'Pink Flower',
+        price: '$40.00',
+        rating: 5,
+        image_source:'./assets/pink-flower.png'
+    }
+];
+const blueFlower = data[0];
+
 //Elements needed to construct HTML component
 const body = document.querySelector('body');
 const card_container = document.createElement('div');
-card_container.setAttribute('class', 'card_container');
 const card = document.createElement('div');
-card.setAttribute('class', 'card');
 const image = document.createElement('img');
-image.setAttribute('class', 'image');
-image.setAttribute('src', './assets/blue-flower.png');
-image.setAttribute('alt', 'blue-flower');
 const card_body = document.createElement('div');
-card_body.setAttribute('class', 'card_body');
 const h4 = document.createElement('h4');
-h4.innerHTML = 'Blue Flower';
 const price = document.createElement('p');
-price.setAttribute('class', 'price');
-price.innerHTML = '$80.00';
 const rating = document.createElement('p');
-rating.setAttribute('class', 'rating');
 const star = document.createElement('img');
-star.setAttribute('src', "./assets/star.svg");
+//insert information for stars needs to be placed before the loop
+star.setAttribute('src', './assets/star.svg');
 star.setAttribute('style', 'width: 8px');
 star.setAttribute('alt', 'star');
 
 
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < blueFlower.rating; i++) {
     rating.appendChild(star.cloneNode(true))
 }
-// rating.appendChild(star);
 body.append(card_container);
 card_container.append(card);
 card.append(image);
@@ -36,18 +51,20 @@ card_body.append(price);
 card_body.append(rating);
 
 
-
 //Add information
+rating.setAttribute('class', 'rating');
 
+card_container.setAttribute('class', 'card_container');
+card.setAttribute('class', 'card');
 
+image.setAttribute('class', 'image');
+image.setAttribute('src', './assets/blue-flower.png');
+image.setAttribute('alt', 'blue-flower');
 
-
-
-
-
-
-
-
+card_body.setAttribute('class', 'card_body');
+price.setAttribute('class', 'price');
+price.innerHTML = blueFlower.price;
+h4.innerHTML = blueFlower.product_name;
 
 
 
