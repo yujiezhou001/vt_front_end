@@ -16,7 +16,11 @@ h4 {
 
 p {
   margin: 0px;
-  padding: 2px;
+  padding: 1px;
+}
+
+img {
+  padding: 1px;
 }
 
 .image {
