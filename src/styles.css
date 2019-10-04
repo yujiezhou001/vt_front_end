@@ -32,6 +32,27 @@ img {
   border-bottom: solid 0.1px #e4e3e3; /* This creates the border. Replace black with whatever color you want. */
 }
 
+button {
+  position: relative;
+  width: 7.3em;
+  height: 2.3em;
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  border-radius: 3px;
+  background: #2bbd10;
+  border: none;
+  bottom: 9em;;
+  padding: 0px;
+  margin-top: -2.3em;
+}
+
+.imageGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .card {
     box-shadow: 0 4px 8px 0.5px rgba(0, 0, 0, 0.1);
     max-width: 300px;
