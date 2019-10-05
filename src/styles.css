@@ -12,6 +12,7 @@ h4 {
   margin: 0px;
   padding-top: 2px;
   font-size: 12px;
+  opacity: 0.6;
 }
 
 p {
@@ -34,17 +35,18 @@ img {
 }
 
 button {
+  display: inline-flex; 
   position: relative;
-  width: 7.3em;
   height: 2.3em;
   font-size: 13px;
   font-weight: 500;
   color: white;
   border-radius: 3px;
-  background: #2bbd10;
+  background: #15d36b;
+  /* background: #17f27a; */
   border: none;
   bottom: 9em;;
-  padding: 0px;
+  padding: 0px 12px;
   margin-top: -2.3em;
   transition: 0.3s all;
   display: none;
@@ -82,7 +84,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
+  opacity: 0;
   }
 
 .card {

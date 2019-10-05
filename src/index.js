@@ -26,22 +26,33 @@ const data = [
 //function that changes button content on click
 const buttonOnClick = (index) => {
     //index is an input which will be acquired from index in forEach loop
-    var elem = document.getElementsByTagName('button');
-    if (elem[index].innerHTML === 'Add to cart') {
-        elem[index].innerHTML = 'Remove from cart';
+    const button = document.getElementsByTagName('button');
+    if (button[index].innerHTML === 'Add to cart') {
+        button[index].innerHTML = 'Remove from cart';
     } else {
-        elem[index].innerHTML = 'Add to cart';
+        button[index].innerHTML = 'Add to cart';
     }
+
 }
 
 //this function is used for static html components, to test 
 //button change feature before dynamically make them
 const buttonOnChangeTest = () => {
-    var elem = document.getElementsByTagName('button');
-    if (elem[0].innerHTML === 'Add to cart') {
-        elem[0].innerHTML = 'Remove from cart';
+    //toggle text in and color of button
+    const button = document.getElementsByTagName('button');
+    if (button[0].innerHTML === 'Add to cart') {
+        button[0].innerHTML = 'Remove from cart';
+        button[0].style.background = '#17f27a';
     } else {
-        elem[0].innerHTML = 'Add to cart';
+        button[0].innerHTML = 'Add to cart';
+        button[0].style.background = '#15d36b';
+    }
+    //toggle badge's opacity
+    const badge = document.getElementsByClassName('badge');
+    if (badge[0].style.opacity === '1') {
+        badge[0].style.opacity = '0';
+    } else {
+        badge[0].style.opacity = '1';
     }
 }
 
@@ -105,9 +116,9 @@ const buildProductCard = (product, index) => {
 }
 
 //loop through data array and build product card for each object in data
-data.forEach(function(product, index){
-    buildProductCard(product, index)
-})
+// data.forEach(function(product, index){
+//     buildProductCard(product, index)
+// })
 
 
 
