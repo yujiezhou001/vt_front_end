@@ -23,8 +23,31 @@ const data = [
     }
 ];
 
-const buildProductCard = (product) => {
+//function that changes button content on click
+const buttonOnClick = (index) => {
+    //index is an input which will be acquired from index in forEach loop
+    var elem = document.getElementsByTagName('button');
+    if (elem[index].innerHTML === 'Add to cart') {
+        elem[index].innerHTML = 'Remove from cart';
+    } else {
+        elem[index].innerHTML = 'Add to cart';
+    }
+}
 
+//this function is used for static html components, to test 
+//button change feature before dynamically make them
+const buttonOnChangeTest = () => {
+    var elem = document.getElementsByTagName('button');
+    if (elem[0].innerHTML === 'Add to cart') {
+        elem[0].innerHTML = 'Remove from cart';
+    } else {
+        elem[0].innerHTML = 'Add to cart';
+    }
+}
+
+const buildProductCard = (product, index) => {
+
+    
     //Create elements to build HTML card component
     const card_container = document.querySelector('.card-container');
     const card = document.createElement('div');
@@ -70,7 +93,9 @@ const buildProductCard = (product) => {
     image.setAttribute('src', product.image_source);
     image.setAttribute('alt', product.product_name);
     button.setAttribute('type', 'button');
-    button.innerHTML = 'Add to Cart';
+    button.setAttribute('id', index);
+    button.innerHTML = 'Add to cart';
+    button.setAttribute('onclick', `buttonOnClick(${index})`);
     badge.setAttribute('class', 'badge');
     badge.innerHTML = 'In Cart';
     card_body.setAttribute('class', 'card-body');
@@ -79,9 +104,9 @@ const buildProductCard = (product) => {
     h4.innerHTML = product.product_name;
 }
 
-
-data.forEach(function(product){
-    buildProductCard(product)
+//loop through data array and build product card for each object in data
+data.forEach(function(product, index){
+    buildProductCard(product, index)
 })
 
 
