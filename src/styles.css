@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     width: 100%;
-    margin: auto;
+    margin-top: 10px;
   }
 
 .card-body {
@@ -51,7 +51,24 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
+
+.badge {
+  position: absolute;
+  transform: translate(-280%,-260%);
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: rgb(237, 96, 45);
+  color: #fff;
+  font: 10px "josefin sans", arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
 
 .card {
     box-shadow: 0 4px 8px 0.5px rgba(0, 0, 0, 0.1);
