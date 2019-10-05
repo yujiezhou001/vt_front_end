@@ -30,6 +30,7 @@ img {
   width: 90%; /* Change this to whatever width you want. */
   padding-top: 20px; /* This creates some space between the element and the border. */
   border-bottom: solid 0.1px #e4e3e3; /* This creates the border. Replace black with whatever color you want. */
+  transition: 0.3s all;
 }
 
 button {
@@ -45,7 +46,20 @@ button {
   bottom: 9em;;
   padding: 0px;
   margin-top: -2.3em;
+  transition: 0.3s all;
+  display: none;
 }
+
+.image:hover + button, button:hover {
+  display: inline-block;
+  opacity: 0.9;
+}
+  
+.image:hover {
+  -webkit-filter: blur(2px);
+  filter: opacity(50%);
+}
+
 
 .imageGroup {
   display: flex;
@@ -56,18 +70,19 @@ button {
 
 .badge {
   position: absolute;
-  transform: translate(-280%,-260%);
+  transform: translate(-270%,-260%);
   height: 50px;
   width: 50px;
   text-align: center;
   vertical-align: middle;
   border-radius: 50%;
-  background: rgb(237, 96, 45);
+  background: rgb(255, 104, 22);
   color: #fff;
   font: 10px "josefin sans", arial;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
   }
 
 .card {
