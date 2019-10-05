@@ -24,15 +24,24 @@ const data = [
 ];
 
 //function that changes button content on click
+//index is an input which will be acquired from index in forEach loop
 const buttonOnClick = (index) => {
-    //index is an input which will be acquired from index in forEach loop
+    //toggle text in and color of button
     const button = document.getElementsByTagName('button');
     if (button[index].innerHTML === 'Add to cart') {
         button[index].innerHTML = 'Remove from cart';
+        button[index].style.background = '#17f27a';
     } else {
         button[index].innerHTML = 'Add to cart';
+        button[index].style.background = '#15d36b';
     }
-
+    //toggle badge's opacity
+    const badge = document.getElementsByClassName('badge');
+    if (badge[index].style.opacity === '1') {
+        badge[index].style.opacity = '0';
+    } else {
+        badge[index].style.opacity = '1';
+    }
 }
 
 //this function is used for static html components, to test 
@@ -116,9 +125,9 @@ const buildProductCard = (product, index) => {
 }
 
 //loop through data array and build product card for each object in data
-// data.forEach(function(product, index){
-//     buildProductCard(product, index)
-// })
+data.forEach(function(product, index){
+    buildProductCard(product, index)
+})
 
 
 
