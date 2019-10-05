@@ -92,13 +92,14 @@ button {
     max-width: 300px;
     margin: 10px;
     text-align: center;
-    font-family: arial;
+    /* font-family: arial; */
     border-radius: 5px;
   }
   
 .price {
     color: grey;
     font-size: 12px;
+    font-family: 'Rubik', sans-serif;
   }
 
 .card-container {
