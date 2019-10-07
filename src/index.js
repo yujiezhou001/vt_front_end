@@ -85,11 +85,12 @@ const buildProductCard = (product, index) => {
     star.setAttribute('alt', 'star');
 
     // Append created elements into the DOM
+    // Append stars based on product's rating
     for (let i = 0; i < product.rating; i++) {
         star.setAttribute('style', 'width: 8px');
         rating.appendChild(star.cloneNode(true))
     }
-
+    // Append rest of the stars (half opacity)
     for (let i = 0; i < (5 - product.rating); i++) {
         star.setAttribute('style', 'width: 8px; opacity: 0.5');
         rating.appendChild(star.cloneNode(true))
